@@ -1,0 +1,63 @@
+openapi: 3.0.2
+
+info:
+  title: API Title
+  version: 0.0.1
+
+servers:
+  - url: https://jsonplaceholder.typicode.com
+
+paths:
+  /:
+    get:
+      tags:
+        - welcome
+      operationId: welcome
+      responses:
+        200:
+          description: Welcome
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    example: Product feedback
+                  version:
+                    type: string
+                    example: 0.0.1
+  /todos:
+    get:
+      tags:
+        - todos
+      operationId: todos
+      responses:
+        200:
+          description: Todo list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          example: 2
+        userId:
+          type: integer
+          format: int32
+          example: 4
+        title:
+          type: string
+          example: we are going to the moon
+        completed:
+          type: boolean
+          example: true

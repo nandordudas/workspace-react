@@ -1,0 +1,52 @@
+{
+  "name": "Node.js & TypeScript",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "sudo chown node node_modules; pnpm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "42Crunch.vscode-openapi",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "mutantdino.resourcemonitor",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "zixuanChen.vitest-explorer"
+      ],
+      "settings": {
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true,
+          "source.fixAll": false,
+          "source.organizeImports": false
+        },
+        "editor.formatOnSave": false,
+        "editor.linkedEditing": true,
+        "editor.tabSize": 2,
+        "files.trimFinalNewlines": true,
+        "errorLens.excludeBySource": [
+          "cSpell",
+          "eslint"
+        ],
+        "errorLens.fontStyleItalic": true,
+        "errorLens.fontWeight": "100",
+        "eslint.codeActionsOnSave.mode": "problems",
+        "eslint.validate": [
+          "html",
+          "javascript",
+          "javascriptreact",
+          "json",
+          "json5",
+          "jsonc",
+          "markdown",
+          "typescript",
+          "typescriptreact",
+          "yaml"
+        ],
+        "typescript.updateImportsOnFileMove.enabled": "always"
+      }
+    }
+  }
+}

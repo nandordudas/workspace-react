@@ -1,0 +1,9 @@
+{
+  "extends": "@rumpup-todo/tsconfig/tsconfig.commonjs.json",
+  "include": [
+    "./src/*.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./src"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@rumpup-todo/openapi-backend",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist",
+    "./api-spec.yml"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "nr build --watch",
+    "lint:fix": "nr lint --fix",
+    "lint": "eslint . --cache",
+    "start:dev": "nx tsx watch ./src",
+    "test:watch": "vitest",
+    "test": "vitest --run",
+    "typecheck": "tsc --incremental --noEmit"
+  },
+  "dependencies": {
+    "msw": "^0.49.0",
+    "openapi-backend": "^5.6.0"
+  },
+  "devDependencies": {
+    "axios": "^1.2.0",
+    "tsup": "^6.5.0"
+  }
+}

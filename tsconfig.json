@@ -1,0 +1,18 @@
+{
+  "extends": "@rumpup-todo/tsconfig",
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/react/tsconfig.json"
+    },
+    {
+      "path": "./config/commitlint/tsconfig.json"
+    },
+    {
+      "path": "./config/eslint-config/tsconfig.json"
+    },
+    {
+      "path": "./config/tsconfig/tsconfig.json"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rumpup-todo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build:config": "nr --filter './config/**' build",
+    "build": "nr --recursive --filter '!./config/**' build",
+    "lint:fix": "nr --parallel lint:fix",
+    "lint": "nr --parallel lint",
+    "prepare": "nr build:config && nr setup:husky",
+    "setup:husky": "is-ci || husky install ./config/husky",
+    "test": "nr --parallel --filter '!./config/**' test",
+    "typecheck": "nr build && nr --parallel typecheck",
+    "up": "taze major -Ir"
+  },
+  "peerDependencies": {
+    "@antfu/ni": "^0.18.0",
+    "taze": "^0.8.0"
+  },
+  "devDependencies": {
+    "@rumpup-todo/commitlint": "workspace:*",
+    "@rumpup-todo/eslint-config": "workspace:*",
+    "@rumpup-todo/tsconfig": "workspace:*",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
+  },
+  "eslintConfig": {
+    "extends": "@rumpup-todo"
+  },
+  "commitlint": {
+    "extends": "@rumpup-todo"
+  }
+}

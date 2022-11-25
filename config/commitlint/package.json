@@ -1,0 +1,29 @@
+{
+  "name": "@rumpup-todo/commitlint",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Commitlint config",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "nr build --watch",
+    "lint:fix": "nr lint --fix",
+    "lint": "eslint . --cache",
+    "typecheck": "tsc --incremental --noEmit"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/types": "^17.0.0"
+  }
+}

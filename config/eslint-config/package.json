@@ -1,0 +1,37 @@
+{
+  "name": "@rumpup-todo/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "ESLint config",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "coverage": "nr test --coverage",
+    "dev": "nr build --watch",
+    "lint:fix": "nr lint --fix",
+    "lint": "eslint . --cache",
+    "test": "vitest",
+    "typecheck": "tsc --incremental --noEmit"
+  },
+  "peerDependencies": {
+    "eslint": "^8.28.0",
+    "typescript": "~4.8.4"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^0.31.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-define-config": "^1.12.0",
+    "eslint-plugin-import-newlines": "^1.3.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0"
+  }
+}

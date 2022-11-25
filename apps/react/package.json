@@ -1,0 +1,39 @@
+{
+  "name": "@rumpup-todo/react-app",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host",
+    "lint:fix": "nr lint --fix",
+    "lint": "eslint . --cache",
+    "preview": "vite preview",
+    "test:coverage": "nr test run --coverage",
+    "test:ui": "nr test --ui",
+    "test": "vitest",
+    "typecheck": "tsc --incremental --noEmit"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5"
+  },
+  "devDependencies": {
+    "@rumpup-todo/openapi-backend": "workspace:*",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/redux-mock-store": "^1.0.3",
+    "@types/whatwg-fetch": "^0.0.33",
+    "@vitejs/plugin-react": "^2.2.0",
+    "@vitest/coverage-c8": "^0.25.3",
+    "jsdom": "^20.0.3",
+    "redux-mock-store": "^1.5.4",
+    "vite": "^3.2.4",
+    "vite-tsconfig-paths": "^3.6.0",
+    "vitest": "^0.25.3",
+    "whatwg-fetch": "^3.6.2"
+  }
+}
