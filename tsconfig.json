@@ -13,6 +13,9 @@
     },
     {
       "path": "./config/tsconfig/tsconfig.json"
+    },
+    {
+      "path": "./packages/msw-openapi/tsconfig.json"
     }
   ]
 }
