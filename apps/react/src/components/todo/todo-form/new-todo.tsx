@@ -25,7 +25,7 @@ export const NewTodo = () => {
         className="form-control"
         placeholder="Todo..."
         value={inputState}
-        onChange={e => setInputState(e.target.value)}
+        onChange={({ target }) => setInputState(target.value)}
       />
       <button
         className="btn btn-primary"

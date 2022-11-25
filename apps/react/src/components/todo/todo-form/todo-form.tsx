@@ -4,9 +4,9 @@ import { useAppSelector } from 'store'
 import { selectEdit } from 'store/todo/todo.selectors'
 
 export const TodoForm = () => {
-  const edit = useAppSelector(selectEdit)
+  const isEditing = useAppSelector(selectEdit)
 
-  if (edit) {
+  if (isEditing) {
     return (
       <div className="container my-5">
         <EditTodo />

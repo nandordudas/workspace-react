@@ -14,3 +14,5 @@ tmp
 tsconfig.tsbuildinfo
 
 *.log*
+.pnpm-store
+antfu-ni

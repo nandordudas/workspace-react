@@ -3,7 +3,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "sudo chown node node_modules; pnpm install",
+  "postCreateCommand": "pnpm install",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -48,5 +48,6 @@
         "typescript.updateImportsOnFileMove.enabled": "always"
       }
     }
-  }
+  },
+  "remoteUser": "root"
 }

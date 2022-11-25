@@ -9,7 +9,7 @@
     "lint": "nr --parallel lint",
     "prepare": "nr build:config && nr setup:husky",
     "setup:husky": "is-ci || husky install ./config/husky",
-    "test": "nr --parallel --filter '!./config/**' test",
+    "test": "nr build && nr --parallel --filter '!./config/**' test",
     "typecheck": "nr build && nr --parallel typecheck",
     "up": "taze major -Ir"
   },

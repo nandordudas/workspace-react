@@ -39,7 +39,7 @@ export const EditTodo = () => {
         type="text"
         className="form-control"
         value={inputState}
-        onChange={e => setInputState(e.target.value)}
+        onChange={({ target }) => setInputState(target.value)}
         autoFocus
       />
       <button

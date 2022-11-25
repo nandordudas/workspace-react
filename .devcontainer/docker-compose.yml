@@ -2,21 +2,19 @@ version: '3.9'
 
 services:
   app:
-    container_name: application
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
       args:
-        COMPOSE_PROJECT_NAME: rumpup-todo
         USERNAME: node
         VARIANT: 16-bullseye
     command: sleep infinity
     volumes:
       - ..:/workspace:cached
       - bash-history:/commandhistory
-      - vscode-extensions:/home/node/.vscode-server/extensions
+      - vscode-extensions:/root/.vscode-server/extensions
       - node-modules:/workspace/node_modules
-      - pnpm-store:/home/node/.pnpm-store
+      - pnpm-store:/root/.pnpm-store
 
 volumes:
   vscode-extensions:

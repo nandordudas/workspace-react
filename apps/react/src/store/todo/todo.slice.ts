@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 import { StoreNames } from 'store/constants'
 
+import { getItemIndex } from './todo.slice.constants'
 import type { Todo, TodoState } from './todo.state'
 import { todoState as initialState } from './todo.state'
 import {
@@ -11,9 +12,6 @@ import {
   modifyTodoThunk,
   toggleTodoStatusThunk,
 } from './todo.thunks'
-
-const getItemIndex = (state: TodoState, id?: Todo['id']) =>
-  state.items.findIndex(item => item.id === id)
 
 export const todoSlice = createSlice({
   name: StoreNames.Todo,
@@ -25,7 +23,7 @@ export const todoSlice = createSlice({
     removeTodo(state: TodoState, action: PayloadAction<Todo['id']>) {
       state.items = state.items.filter(item => item.id !== action.payload)
     },
-    editTodo(state, action: PayloadAction<Todo>) {
+    editTodo(state: TodoState, action: PayloadAction<Todo>) {
       const itemIndex = getItemIndex(state, action.payload.id)
 
       state.edit = null
@@ -54,7 +52,7 @@ export const todoSlice = createSlice({
       state.edit = payload
     },
   },
-  extraReducers: ({ addCase }) => {
+  extraReducers({ addCase }) {
     addCase(getAllTodosThunk.fulfilled, (state, action) => {
       state.items = action.payload!
     })

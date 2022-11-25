@@ -43,4 +43,6 @@ describe('App', () => {
       ]
     `)
   })
+
+  it.todo('should request todo list from the endpoint')
 })
